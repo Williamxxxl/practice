@@ -1,0 +1,62 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: auth-test
+
+  datasource:
+    dynamic:
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: CuccHikariCP
+      primary: base
+      datasource:
+        base:
+          username: root
+          password: qqwwqw1122..
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://182.92.198.138:3416/practice?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+
+  redis:
+    database: 2
+    host: 182.92.198.138
+    port: 6379
+    password: qqwwqw1122..
+    lettuce:
+      pool:
+        min-idle: 8
+        max-idle: 500
+        max-active: 2000
+        max-wait: 10000
+    timeout: 5000
+
+  data:
+    mongodb:
+      uri: mongodb://quwei:qqwwqw1122..@182.92.198.138/?authSource=admin
+      database: practice
+
+mybatis-plus:
+  type-aliases-package: com.fchsoft.auth.test.module.entity
+  mapper-locations: classpath:mapper/*/*.xml
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging:
+  level:
+    com:
+      fch: debug
