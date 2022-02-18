@@ -36,7 +36,7 @@ public class DictMovieTicketController {
             service.sell();
             r = CommonResult.ok();
         }catch (Exception e){
-            log.error("[{}]:  error, errMsg: [{}] ", e.getMessage(), e);
+            log.error("[{}]:  error, errMsg: 111[{}] ", e.getMessage(), e);
             r = CommonResult.error().data(e.getMessage()).exception(e);
         }
         return r;
