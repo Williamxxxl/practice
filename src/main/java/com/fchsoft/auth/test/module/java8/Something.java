@@ -1,7 +1,5 @@
 package com.fchsoft.auth.test.module.java8;
 
-import cn.hutool.core.io.LineHandler;
-import cn.hutool.core.lang.func.Func1;
 import lombok.Data;
 
 /**
