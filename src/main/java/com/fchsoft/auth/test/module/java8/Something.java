@@ -40,6 +40,6 @@ public class Something {
         String j = convert1.convert("java");
         System.out.println(j);
         IConvert<String, Something> convert2 = Something::new;
-        convert2.convert("constructor");
+        convert2.convert("constructor11");
     }
 }
